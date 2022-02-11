@@ -1,0 +1,41 @@
+.calendar {
+  display: flex;
+  &__today {
+    width: 36%;
+    text-align: center;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+      line-height: 1em;
+
+      &:first-child {
+        font-size: 31px;
+      }
+
+      &:last-child {
+        font-size: 51px;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 14.28%);
+    width: 64%;
+    font-size: 12px;
+
+    > span {
+      text-align: center;
+    }
+  }
+}
+
+.dow {
+  font-weight: 800;
+}
+
+.today {
+  color: var(--primary);
+  font-weight: 800;
+}

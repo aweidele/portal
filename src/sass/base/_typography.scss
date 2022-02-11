@@ -1,0 +1,12 @@
+h1,
+.h1 {
+  font-size: 31px;
+  line-height: 69px;
+  letter-spacing: 0.25em;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $desktopLg) {
+    font-size: 51px;
+  }
+}

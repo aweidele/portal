@@ -1,0 +1,25 @@
+.header {
+  color: var(--white);
+
+  > div {
+    @include constrainWidth;
+    display: grid;
+    grid-template-columns: 178px auto 190px;
+    grid-template-areas: "weather title calendar";
+  }
+}
+
+.header-title {
+  grid-area: title;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header-weather {
+  grid-area: weather;
+}
+
+.header-calendar {
+  grid-area: calendar;
+}

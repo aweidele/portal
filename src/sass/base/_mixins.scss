@@ -1,0 +1,5 @@
+@mixin constrainWidth {
+  max-width: $maxW + ($gutter * 2);
+  margin: auto;
+  padding: 0 $gutter;
+}
