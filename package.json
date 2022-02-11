@@ -1,0 +1,31 @@
+{
+  "name": "Portal",
+  "version": "2.0.0",
+  "description": "2022 Aaron's Portal!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aweidele/portal"
+  },
+  "author": "Aaron Weidele",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aweidele/portal/issues"
+  },
+  "homepage": "https://github.com/aweidele/portal#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-pxtorem": "^3.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "node-sass": "^7.0.1",
+    "pump": "^3.0.0"
+  }
+}

@@ -1,0 +1,1 @@
+const test=t=>10*t;console.log(test(4));
