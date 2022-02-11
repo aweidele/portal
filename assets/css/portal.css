@@ -88,7 +88,7 @@ h1,
 
 .calendar__grid {
   display: grid;
-  grid-template-columns: repeat(7, 14.28%);
+  grid-template-columns: repeat(7, 1fr);
   width: 64%;
   font-size: 0.75rem;
 }

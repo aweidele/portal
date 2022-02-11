@@ -1,5 +1,38 @@
 const linkList = document.querySelector('.link-list');
-console.log(linkList);
+const calendar = document.querySelector('.header-calendar');
+
+const renderCalendar = function() {
+    const months = [
+        'Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'
+    ]
+    const today = new Date();
+    const m = today.getMonth();
+    const d = today.getDate();
+    const y = today.getFullYear();
+    alert(y);
+
+    const month = months[m];
+    
+    return `
+        <div class="calendar">
+            <div class="calendar__today">
+                <span>${month}</span>
+                <span>${d}</span>
+            </div>
+            <div class="calendar__grid">
+                <span class="dow">S</span>
+                <span class="dow">M</span>
+                <span class="dow">T</span>
+                <span class="dow">W</span>
+                <span class="dow">T</span>
+                <span class="dow">F</span>
+                <span class="dow">S</span>
+            </div>
+        </div>
+    `;
+}
+
+calendar.innerHTML = renderCalendar();
 
 const renderBookmarks = function(bookmarks) {
     const links = `
