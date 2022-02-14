@@ -4,20 +4,20 @@ const calendar = document.querySelector('.header-calendar');
 const renderCalendar = function() {
     const months = [
         'Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'
-    ]
+    ];
     const today = new Date();
-    const m = today.getMonth();
-    const d = today.getDate();
-    const y = today.getFullYear();
-    alert(y);
-
-    const month = months[m];
+    const month = today.getMonth();
+    const day = today.getDate();
+    const year = today.getFullYear();
     
+    const firstOfMonth = new Date(year, month, 1, 0, 0 ,0).getDay();
+    const daysInMonth = new Date(year, month + 1, 0, 0, 0 ,0).getDate();
+
     return `
         <div class="calendar">
             <div class="calendar__today">
-                <span>${month}</span>
-                <span>${d}</span>
+                <span>${months[month]}</span>
+                <span>${day}</span>
             </div>
             <div class="calendar__grid">
                 <span class="dow">S</span>
@@ -27,6 +27,10 @@ const renderCalendar = function() {
                 <span class="dow">T</span>
                 <span class="dow">F</span>
                 <span class="dow">S</span>
+                ${Array.from(Array(daysInMonth).keys()).map(d => { 
+                    d++;
+                    return `<span${d === day ? ' class="today"' : ''}${d === 1 ? ` style="grid-column-start: ${firstOfMonth + 1}"` : ''}>${d}</span>`;
+                }).join('')}
             </div>
         </div>
     `;
