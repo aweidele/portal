@@ -132,7 +132,7 @@ const renderBookmarks = function (bookmarks) {
 
 const getBookmarks = async function () {
   try {
-    const res = await fetch("https://angrychickens.com/portal/test/");
+    const res = await fetch("https://angrychickens.com/portal/api/");
     renderBookmarks(await res.json());
   } catch (err) {
     console.log(err);
@@ -150,7 +150,7 @@ const postBookmark = async function () {
   opts.append("cheese", "Cheddar");
 
   try {
-    const res = await fetch("https://angrychickens.com/portal/test/test.php", {
+    const res = await fetch("https://angrychickens.com/portal/api/test.php", {
       method: "POST",
       body: opts,
     });
@@ -163,14 +163,10 @@ const postBookmark = async function () {
 
 const postBookmark2 = async function () {
   try {
-    const res = await fetch("https://angrychickens.com/portal/test/test.php");
+    const res = await fetch("https://angrychickens.com/portal/api/test.php");
     const bookmarks = await res.json();
     console.log("postBookmark2", bookmarks);
   } catch (err) {
     console.error(err);
   }
 };
-
-// getBookmarks();
-// postBookmark();
-// postBookmark2();

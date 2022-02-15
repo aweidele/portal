@@ -43,6 +43,7 @@ h2,
 
 .header {
   color: var(--white);
+  padding: 1.25rem 0 3.125rem 0;
 }
 
 .header>div {
@@ -110,7 +111,6 @@ h2,
   max-width: 1240px;
   margin: auto;
   padding: 0 1.25rem;
-  padding-top: 3.125rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;

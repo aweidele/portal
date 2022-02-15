@@ -1,5 +1,6 @@
 .header {
   color: var(--white);
+  padding: $gutter 0 $gutterLg 0;
 
   > div {
     @include constrainWidth;
