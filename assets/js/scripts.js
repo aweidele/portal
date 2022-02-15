@@ -104,7 +104,7 @@ const renderBookmarks = function (bookmarks) {
       ${mostClicked
         .map(
           (link) =>
-            `<li><a href="${link.url}" title="${link.clicks}">${link.linkName}</a></li>`
+            `<li><a href="http://angrychickens.com/portal/api/click.php?link=${link.linkID}" title="${link.clicks}">${link.linkName}</a></li>`
         )
         .join("")}
     </ul>
@@ -118,7 +118,7 @@ const renderBookmarks = function (bookmarks) {
         ${catLinks
           .map(
             (link) =>
-              `<li><a href="${link.url}" title="${link.clicks}">${link.linkName}</a></li>`
+              `<li><a href="http://angrychickens.com/portal/api/click.php?link=${link.linkID}" title="${link.clicks}">${link.linkName}</a></li>`
           )
           .join("")}
       </ul>
