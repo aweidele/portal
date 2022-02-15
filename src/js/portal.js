@@ -80,6 +80,7 @@ calendar.innerHTML = renderCalendar();
 // }
 
 const renderBookmarks = function (bookmarks) {
+  console.log(bookmarks);
   const links = `
         <ul>
             ${bookmarks
@@ -91,18 +92,19 @@ const renderBookmarks = function (bookmarks) {
         </ul>
     `;
 
-  linkList.innerHTML = links;
+  //   linkList.innerHTML = links;
 };
 
 const getBookmarks = async function () {
   try {
     const res = await fetch("https://angrychickens.com/portal/test/");
-    const bookmarks = await res.json();
-    renderBookmarks(bookmarks);
+    renderBookmarks(await res.json());
   } catch (err) {
     console.log(err);
   }
 };
+
+getBookmarks();
 
 const postBookmark = async function () {
   // const opts = {
@@ -134,6 +136,6 @@ const postBookmark2 = async function () {
   }
 };
 
-getBookmarks();
-postBookmark();
-postBookmark2();
+// getBookmarks();
+// postBookmark();
+// postBookmark2();

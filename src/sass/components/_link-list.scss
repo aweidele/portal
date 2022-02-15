@@ -1,0 +1,51 @@
+.link-list {
+  @include constrainWidth;
+  padding-top: $gutterLg;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+
+  > div {
+    border-radius: 5px;
+    padding: $gutter $gutter + 7;
+    color: var(--primary);
+    background-color: rgba(#ffffff, 0.5);
+
+    &.most-clicked {
+      background: var(--primary);
+      color: var(--white);
+      display: flex;
+      grid-column-start: span 3;
+
+      h2 {
+        margin-right: $gutter;
+      }
+
+      a {
+        color: var(--white);
+      }
+    }
+  }
+
+  li {
+    font-size: 12px;
+    line-height: 1.36em;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.most-clicked {
+  ul {
+    columns: 4;
+    column-gap: $gutter;
+    flex-grow: 1;
+  }
+}
