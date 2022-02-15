@@ -53,8 +53,16 @@
 
 .most-clicked {
   ul {
-    columns: 4;
+    columns: 2;
     column-gap: $gutter;
     flex-grow: 1;
+
+    @media screen and (min-width: $tablet) {
+      columns: 3;
+    }
+
+    @media screen and (min-width: $desktopLg) {
+      columns: 4;
+    }
   }
 }

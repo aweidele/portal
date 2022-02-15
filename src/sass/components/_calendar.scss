@@ -1,8 +1,5 @@
 .calendar {
-  display: flex;
   &__today {
-    width: 36%;
-    padding-right: $gutter;
     text-align: center;
     text-transform: uppercase;
 
@@ -20,11 +17,23 @@
     }
   }
 
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    &__today {
+      width: 36%;
+      padding-right: $gutter;
+    }
+  }
+
   &__grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    display: none;
     width: 64%;
     font-size: 12px;
+
+    @media screen and (min-width: $tablet) {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
 
     > span {
       text-align: center;

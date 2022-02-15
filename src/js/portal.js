@@ -81,18 +81,53 @@ calendar.innerHTML = renderCalendar();
 
 const renderBookmarks = function (bookmarks) {
   console.log(bookmarks);
-  const links = `
-        <ul>
-            ${bookmarks
-              .map(
-                (link) =>
-                  `<li><a href="${link.url}">${link.linkName}</a> (${link.catName})</li>`
-              )
-              .join("")}
-        </ul>
-    `;
+  const mostClicked = [...bookmarks]
+    .sort((a, b) => b.clicks - a.clicks)
+    .splice(0, 24);
 
-  //   linkList.innerHTML = links;
+  // bookmarks.forEach((l) => console.log(l["cat"]));
+
+  const linkCategories = [...bookmarks]
+    .reduce((previous, next) => {
+      if (!previous[next.cat]) previous[next.cat] = [];
+      previous[next.cat].push(next);
+      return previous;
+    }, [])
+    .sort((a, b) => a[0].rank - b[0].rank);
+
+  console.log(linkCategories);
+
+  const output = `
+  <div class="most-clicked">
+    <h2>Most Clicked</h2>
+    <ul>
+      ${mostClicked
+        .map(
+          (link) =>
+            `<li><a href="${link.url}" title="${link.clicks}">${link.linkName}</a></li>`
+        )
+        .join("")}
+    </ul>
+  </div>
+  ${linkCategories
+    .map(
+      (catLinks) => `
+    <div>
+      <h2>${catLinks[0].catName}</h2>
+      <ul>
+        ${catLinks
+          .map(
+            (link) =>
+              `<li><a href="${link.url}" title="${link.clicks}">${link.linkName}</a></li>`
+          )
+          .join("")}
+      </ul>
+    </div>`
+    )
+    .join("")}
+  `;
+
+  linkList.innerHTML = output;
 };
 
 const getBookmarks = async function () {
