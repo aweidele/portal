@@ -40,6 +40,15 @@
       text-decoration: underline;
     }
   }
+
+  h2 {
+    margin-bottom: (17/20) * 1em;
+  }
+
+  ul {
+    columns: 2;
+    column-gap: $gutter;
+  }
 }
 
 .most-clicked {

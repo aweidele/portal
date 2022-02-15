@@ -160,6 +160,15 @@ h2,
   text-decoration: underline;
 }
 
+.link-list h2 {
+  margin-bottom: .85em;
+}
+
+.link-list ul {
+  columns: 2;
+  column-gap: 20px;
+}
+
 .most-clicked ul {
   columns: 4;
   column-gap: 20px;
