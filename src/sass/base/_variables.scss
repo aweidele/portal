@@ -6,11 +6,26 @@ $gutterLg: 50px;
 $tablet: 768px;
 $desktopLg: 980px;
 
+// colors
+$google: #00a057;
+$gmail: #dd4b39;
+$facebook: #3b5998;
+$twitter: #00aced;
+
 :root {
-  // colors
   --primary: #264653;
   --secondary: #e76f51;
   --tertiary: #e9c46a;
   --white: #ffffff;
   --black: #000000;
+
+  --google: #{$google};
+  --gmail: #{$gmail};
+  --facebook: #{$facebook};
+  --twitter: #{$twitter};
+
+  --googleDk: #{darken($google, 20)};
+  --gmailDk: #{darken($gmail, 20)};
+  --facebookDk: #{darken($facebook, 20)};
+  --twitterDk: #{darken($twitter, 20)};
 }

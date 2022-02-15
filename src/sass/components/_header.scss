@@ -5,8 +5,73 @@
   > div {
     @include constrainWidth;
     display: grid;
-    grid-template-columns: 178px auto 190px;
-    grid-template-areas: "weather title calendar";
+    grid-template-columns: 190px auto 190px;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      ". . social"
+      "weather title calendar";
+    grid-gap: 10px;
+  }
+}
+
+.header-social {
+  grid-area: social;
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    margin-right: 10px;
+  }
+
+  span {
+    @include srOnly;
+  }
+
+  a {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    transition: all 0.25s;
+
+    &.google {
+      background-color: var(--google);
+
+      &:hover,
+      &:focus {
+        background-color: var(--googleDk);
+      }
+    }
+
+    &.gmail {
+      background-color: var(--gmail);
+
+      &:hover,
+      &:focus {
+        background-color: var(--gmailDk);
+      }
+    }
+
+    &.facebook {
+      background-color: var(--facebook);
+
+      &:hover,
+      &:focus {
+        background-color: var(--facebookDk);
+      }
+    }
+
+    &.twitter {
+      background-color: var(--twitter);
+
+      &:hover,
+      &:focus {
+        background-color: var(--twitterDk);
+      }
+    }
   }
 }
 

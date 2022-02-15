@@ -4,6 +4,14 @@
   --tertiary: #e9c46a;
   --white: #ffffff;
   --black: #000000;
+  --google: #00a057;
+  --gmail: #dd4b39;
+  --facebook: #3b5998;
+  --twitter: #00aced;
+  --googleDk: #003a20;
+  --gmailDk: #96271a;
+  --facebookDk: #1e2e4f;
+  --twitterDk: #006287;
 }
 
 * {
@@ -51,8 +59,78 @@ h2,
   margin: auto;
   padding: 0 1.25rem;
   display: grid;
-  grid-template-columns: 178px auto 190px;
-  grid-template-areas: "weather title calendar";
+  grid-template-columns: 190px auto 190px;
+  grid-template-rows: auto auto;
+  grid-template-areas: ". . social" "weather title calendar";
+  grid-gap: 10px;
+}
+
+.header-social {
+  grid-area: social;
+}
+
+.header-social ul {
+  display: flex;
+}
+
+.header-social li {
+  margin-right: 0.625rem;
+}
+
+.header-social span {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.header-social a {
+  display: block;
+  width: 1.5625rem;
+  height: 1.5625rem;
+  border: 0.125rem solid var(--white);
+  border-radius: 50%;
+  transition: all 0.25s;
+}
+
+.header-social a.google {
+  background-color: var(--google);
+}
+
+.header-social a.google:hover,
+.header-social a.google:focus {
+  background-color: var(--googleDk);
+}
+
+.header-social a.gmail {
+  background-color: var(--gmail);
+}
+
+.header-social a.gmail:hover,
+.header-social a.gmail:focus {
+  background-color: var(--gmailDk);
+}
+
+.header-social a.facebook {
+  background-color: var(--facebook);
+}
+
+.header-social a.facebook:hover,
+.header-social a.facebook:focus {
+  background-color: var(--facebookDk);
+}
+
+.header-social a.twitter {
+  background-color: var(--twitter);
+}
+
+.header-social a.twitter:hover,
+.header-social a.twitter:focus {
+  background-color: var(--twitterDk);
 }
 
 .header-title {
