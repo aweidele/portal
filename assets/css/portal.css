@@ -71,10 +71,11 @@ h2,
 
 .header-social ul {
   display: flex;
+  justify-content: flex-end;
 }
 
 .header-social li {
-  margin-right: 0.625rem;
+  margin-left: 0.625rem;
 }
 
 .header-social span {
@@ -88,13 +89,21 @@ h2,
   clip: rect(0, 0, 0, 0);
 }
 
+.header-social svg {
+  fill: var(--white);
+  height: 0.6875rem;
+  width: auto;
+}
+
 .header-social a {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 1.5625rem;
   height: 1.5625rem;
   border: 0.125rem solid var(--white);
   border-radius: 50%;
-  transition: all 0.25s;
+  transition: all 0.5s;
 }
 
 .header-social a.google {

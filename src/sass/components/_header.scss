@@ -19,23 +19,32 @@
 
   ul {
     display: flex;
+    justify-content: flex-end;
   }
 
   li {
-    margin-right: 10px;
+    margin-left: 10px;
   }
 
   span {
     @include srOnly;
   }
 
+  svg {
+    fill: var(--white);
+    height: 11px;
+    width: auto;
+  }
+
   a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 25px;
     height: 25px;
     border: 2px solid var(--white);
     border-radius: 50%;
-    transition: all 0.25s;
+    transition: all 0.5s;
 
     &.google {
       background-color: var(--google);
