@@ -258,16 +258,17 @@ h2,
 @media screen and (min-width: 768px) {
   .calendar {
     display: flex;
+    justify-content: space-between;
   }
 
   .calendar__today {
     width: 36%;
-    padding-right: 1.25rem;
   }
 
   .calendar__grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    margin-left: 0.3125rem;
   }
 
   .most-clicked ul {
