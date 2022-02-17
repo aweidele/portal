@@ -1,6 +1,6 @@
 .header {
   color: var(--white);
-  padding: $gutter 0 $gutterLg 0;
+  padding: $gutter 0 $gutter 0;
 
   > div {
     @include constrainWidth;
@@ -8,10 +8,10 @@
     grid-template-columns: 190px auto 190px;
     grid-template-rows: auto auto;
     grid-template-areas:
-      ". . social"
+      "weather . social"
       "weather title calendar";
     grid-gap: 10px;
-    align-items: center;
+    // align-items: center;
   }
 }
 

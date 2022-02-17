@@ -55,7 +55,7 @@ h2,
 
 .header {
   color: var(--white);
-  padding: 1.25rem 0 3.125rem 0;
+  padding: 1.25rem 0 1.25rem 0;
 }
 
 .header>div {
@@ -65,9 +65,8 @@ h2,
   display: grid;
   grid-template-columns: 190px auto 190px;
   grid-template-rows: auto auto;
-  grid-template-areas: ". . social" "weather title calendar";
+  grid-template-areas: "weather . social" "weather title calendar";
   grid-gap: 10px;
-  align-items: center;
 }
 
 .header-social {
@@ -279,6 +278,41 @@ h2,
 
 .current-conditions__description {
   font-size: 0.75rem;
+}
+
+.forecast {
+  display: inline-grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-column-gap: 18px;
+  grid-row-gap: 0;
+  text-align: center;
+}
+
+.forecast svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  fill: var(--tertiary);
+}
+
+.forecast__day {
+  grid-row: 1;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.forecast__icon {
+  grid-row: 2;
+}
+
+.forecast__high {
+  grid-row: 3;
+  font-size: 0.625rem;
+}
+
+.forecast__low {
+  grid-row: 4;
+  font-size: 0.625rem;
 }
 
 @media screen and (min-width: 768px) {

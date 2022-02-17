@@ -16,3 +16,38 @@
     font-size: 12px;
   }
 }
+
+.forecast {
+  display: inline-grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-column-gap: 18px;
+  grid-row-gap: 0;
+  text-align: center;
+
+  svg {
+    width: 12px;
+    height: 12px;
+    fill: var(--tertiary);
+  }
+
+  &__day {
+    grid-row: 1;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  &__icon {
+    grid-row: 2;
+  }
+
+  &__high {
+    grid-row: 3;
+    font-size: 10px;
+  }
+
+  &__low {
+    grid-row: 4;
+    font-size: 10px;
+  }
+}
