@@ -201,6 +201,7 @@ h2,
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+  margin-bottom: 3.125rem;
 }
 
 .link-list>div {
@@ -213,8 +214,11 @@ h2,
 .link-list>div.most-clicked {
   background: var(--primary);
   color: var(--white);
-  display: flex;
   grid-column-start: span 3;
+}
+
+.link-list>div.most-clicked>div {
+  display: flex;
 }
 
 .link-list>div.most-clicked h2 {

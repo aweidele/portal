@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+  margin-bottom: $gutterLg;
 
   > div {
     border-radius: 5px;
@@ -13,8 +14,11 @@
     &.most-clicked {
       background: var(--primary);
       color: var(--white);
-      display: flex;
       grid-column-start: span 3;
+
+      > div {
+        display: flex;
+      }
 
       h2 {
         margin-right: $gutter;

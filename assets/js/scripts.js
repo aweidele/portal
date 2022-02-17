@@ -79,8 +79,17 @@ calendar.innerHTML = renderCalendar();
 //     document.querySelector('p:nth-of-type(1)').innerText = err.message
 // }
 
+const masonry = function () {
+  const categoryGroups = document.querySelectorAll(".category-group");
+  categoryGroups.forEach((group) => {
+    const innerContainer = group.firstElementChild;
+    const height = Math.round(innerContainer.offsetHeight / 60);
+    group.style.gridRowEnd = `span ${height}`;
+    console.log(innerContainer, height);
+  });
+};
+
 const renderBookmarks = function (bookmarks) {
-  console.log(bookmarks);
   const mostClicked = [...bookmarks]
     .sort((a, b) => b.clicks - a.clicks)
     .splice(0, 24);
@@ -95,39 +104,42 @@ const renderBookmarks = function (bookmarks) {
     }, [])
     .sort((a, b) => a[0].rank - b[0].rank);
 
-  console.log(linkCategories);
-
   const output = `
   <div class="most-clicked">
-    <h2>Most Clicked</h2>
-    <ul>
-      ${mostClicked
-        .map(
-          (link) =>
-            `<li><a href="http://angrychickens.com/portal/api/click.php?link=${link.linkID}" title="${link.clicks}">${link.linkName}</a></li>`
-        )
-        .join("")}
-    </ul>
-  </div>
-  ${linkCategories
-    .map(
-      (catLinks) => `
     <div>
-      <h2>${catLinks[0].catName}</h2>
+      <h2>Most Clicked</h2>
       <ul>
-        ${catLinks
+        ${mostClicked
           .map(
             (link) =>
               `<li><a href="http://angrychickens.com/portal/api/click.php?link=${link.linkID}" title="${link.clicks}">${link.linkName}</a></li>`
           )
           .join("")}
       </ul>
+    </div>
+  </div>
+  ${linkCategories
+    .map(
+      (catLinks) => `
+    <div class="category-group">
+      <div>
+        <h2>${catLinks[0].catName}</h2>
+        <ul>
+          ${catLinks
+            .map(
+              (link) =>
+                `<li><a href="http://angrychickens.com/portal/api/click.php?link=${link.linkID}" title="${link.clicks}">${link.linkName}</a></li>`
+            )
+            .join("")}
+        </ul>
+      </div>
     </div>`
     )
     .join("")}
   `;
 
   linkList.innerHTML = output;
+  masonry();
 };
 
 const getBookmarks = async function () {
