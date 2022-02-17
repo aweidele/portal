@@ -85,7 +85,6 @@ const masonry = function () {
     const innerContainer = group.firstElementChild;
     const height = Math.round(innerContainer.offsetHeight / 60);
     group.style.gridRowEnd = `span ${height}`;
-    console.log(innerContainer, height);
   });
 };
 
@@ -152,6 +151,31 @@ const getBookmarks = async function () {
 };
 
 getBookmarks();
+
+const renderWeather = function (weather) {
+  console.log(weather);
+  // const d = new Date(weather.current.daily[0]dt * 1000);
+  weather.daily.forEach((day) => {
+    const d = new Date(day.dt * 1000);
+    console.log(d, day.temp.max);
+  });
+};
+
+const getWeather = async function () {
+  try {
+    const res = await fetch(
+      "https://api.openweathermap.org/data/2.5/onecall?lat=39.2782&lon=-76.7401&units=imperial&exclude=minutely,hourly,alerts&appid=1c58086a0dd586e3fd26953775313809"
+    );
+    const weather = await res.json();
+    renderWeather(weather);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+getWeather();
+
+// https://api.openweathermap.org/data/2.5/onecall?lat=39.2782&lon=-76.7401&units=imperial&exclude=minutely,hourly,alerts&appid=1c58086a0dd586e3fd26953775313809
 
 const postBookmark = async function () {
   // const opts = {
