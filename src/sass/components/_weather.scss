@@ -20,15 +20,16 @@
 .forecast {
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: auto 12px auto auto;
   grid-column-gap: 18px;
-  grid-row-gap: 0;
+  grid-row-gap: 1px;
   text-align: center;
 
   svg {
     width: 12px;
     height: 12px;
     fill: var(--tertiary);
+    transform: translateY(-5px);
   }
 
   &__day {
