@@ -84,7 +84,13 @@ const masonry = function () {
   const categoryGroups = document.querySelectorAll(".category-group");
   categoryGroups.forEach((group) => {
     const innerContainer = group.firstElementChild;
-    const height = Math.round(innerContainer.offsetHeight / 60);
+    const height = Math.round(
+      (innerContainer.offsetHeight +
+        parseFloat(
+          window.getComputedStyle(group, null).getPropertyValue("padding-top")
+        )) /
+        60
+    );
     group.style.gridRowEnd = `span ${height}`;
   });
 };
@@ -154,7 +160,6 @@ const getBookmarks = async function () {
 getBookmarks();
 
 const renderWeather = function (weather) {
-  console.log(weather);
   const daysOfWeek = ["S", "M", "T", "W", "T", "F", "S"];
   const output = `
   <div class="current-conditions">
@@ -199,11 +204,6 @@ const renderWeather = function (weather) {
   `;
 
   weatherContainer.innerHTML = output;
-  // const d = new Date(weather.current.daily[0]dt * 1000);
-  weather.daily.forEach((day) => {
-    const d = new Date(day.dt * 1000);
-    console.log(d, day.temp.max);
-  });
 };
 
 const getWeather = async function () {
