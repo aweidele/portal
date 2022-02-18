@@ -56,6 +56,15 @@
       }
     }
 
+    &.google-cal {
+      background-color: var(--google2);
+
+      &:hover,
+      &:focus {
+        background-color: var(--google2Dk);
+      }
+    }
+
     &.gmail {
       background-color: var(--gmail);
 

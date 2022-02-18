@@ -8,6 +8,7 @@ $desktopLg: 980px;
 
 // colors
 $google: #00a057;
+$google2: #4285f4;
 $gmail: #dd4b39;
 $facebook: #3b5998;
 $twitter: #00aced;
@@ -20,11 +21,13 @@ $twitter: #00aced;
   --black: #000000;
 
   --google: #{$google};
+  --google2: #{$google2};
   --gmail: #{$gmail};
   --facebook: #{$facebook};
   --twitter: #{$twitter};
 
   --googleDk: #{darken($google, 20)};
+  --google2Dk: #{darken($google2, 20)};
   --gmailDk: #{darken($gmail, 20)};
   --facebookDk: #{darken($facebook, 20)};
   --twitterDk: #{darken($twitter, 20)};

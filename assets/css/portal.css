@@ -5,10 +5,12 @@
   --white: #ffffff;
   --black: #000000;
   --google: #00a057;
+  --google2: #4285f4;
   --gmail: #dd4b39;
   --facebook: #3b5998;
   --twitter: #00aced;
   --googleDk: #003a20;
+  --google2Dk: #0b51c5;
   --gmailDk: #96271a;
   --facebookDk: #1e2e4f;
   --twitterDk: #006287;
@@ -117,6 +119,15 @@ h2,
 .header-social a.google:hover,
 .header-social a.google:focus {
   background-color: var(--googleDk);
+}
+
+.header-social a.google-cal {
+  background-color: var(--google2);
+}
+
+.header-social a.google-cal:hover,
+.header-social a.google-cal:focus {
+  background-color: var(--google2Dk);
 }
 
 .header-social a.gmail {
