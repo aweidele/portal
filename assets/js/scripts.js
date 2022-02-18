@@ -88,7 +88,8 @@ const masonry = function () {
       (innerContainer.offsetHeight +
         parseFloat(
           window.getComputedStyle(group, null).getPropertyValue("padding-top")
-        )) /
+        ) *
+          2) /
         60
     );
     group.style.gridRowEnd = `span ${height}`;
