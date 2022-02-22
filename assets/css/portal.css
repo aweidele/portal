@@ -4,6 +4,7 @@
   --tertiary: #e9c46a;
   --white: #ffffff;
   --black: #000000;
+  --gray: #a3c7d5;
   --google: #00a057;
   --google2: #4285f4;
   --gmail: #dd4b39;
@@ -38,6 +39,11 @@ body {
 
 strong {
   font-weight: 800;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
 }
 
 h1,
@@ -325,6 +331,110 @@ h2,
 .forecast__low {
   grid-row: 4;
   font-size: 0.625rem;
+}
+
+.controls {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 1.25rem;
+  z-index: 20;
+  background-color: var(--primary);
+  border-top-right-radius: 0.1875rem;
+  border-bottom-right-radius: 0.1875rem;
+  padding: 0.125rem 0.3125rem;
+}
+
+.controls__expand {
+  order: 10;
+}
+
+.controls__expand ~ button,
+.controls__expand ~ a {
+  display: none;
+}
+
+.controls.open .controls__expand {
+  transform: rotate(180deg);
+  margin-left: 0.625rem;
+}
+
+.controls.open .controls__expand ~ button,
+.controls.open .controls__expand ~ a {
+  display: block;
+}
+
+.controls button,
+.controls a {
+  color: var(--white);
+  padding: 0.3125rem 0;
+}
+
+.controls button svg,
+.controls a svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  fill: currentColor;
+  display: block;
+}
+
+.controls button span,
+.controls a span {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.controls-tabs {
+  background: rgba(38,70,83,0.75);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  display: none;
+}
+
+.controls-tabs .close {
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  color: var(--white);
+}
+
+.controls-tabs .close span {
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  padding: 0;
+  margin: -0.0625rem;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.controls-tabs .close svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+.controls-tabs__panel {
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--white);
+  margin: auto;
+  padding: 1.25rem;
 }
 
 @media screen and (min-width: 768px) {

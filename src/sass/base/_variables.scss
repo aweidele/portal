@@ -7,6 +7,7 @@ $tablet: 768px;
 $desktopLg: 980px;
 
 // colors
+$primary: #264653;
 $google: #00a057;
 $google2: #4285f4;
 $gmail: #dd4b39;
@@ -14,11 +15,12 @@ $facebook: #3b5998;
 $twitter: #00aced;
 
 :root {
-  --primary: #264653;
+  --primary: #{$primary};
   --secondary: #e76f51;
   --tertiary: #e9c46a;
   --white: #ffffff;
   --black: #000000;
+  --gray: #{lighten($primary, 50)};
 
   --google: #{$google};
   --google2: #{$google2};
