@@ -284,13 +284,21 @@ h2,
   width: 3.125rem;
   height: 3.125rem;
   margin-right: 0.625rem;
-  fill: var(--tertiary);
+  fill: var(--gray);
 }
 
 .current-conditions__temp {
   display: flex;
   font-size: 3.1875rem;
   align-items: center;
+}
+
+.current-conditions__temp.sunny svg {
+  fill: var(--tertiary);
+}
+
+.current-conditions__temp.snow svg {
+  fill: var(--white);
 }
 
 .current-conditions__description {
@@ -309,8 +317,8 @@ h2,
 .forecast svg {
   width: 0.75rem;
   height: 0.75rem;
-  fill: var(--tertiary);
   transform: translateY(-5px);
+  fill: currentColor;
 }
 
 .forecast__day {
@@ -321,6 +329,15 @@ h2,
 
 .forecast__icon {
   grid-row: 2;
+  color: var(--gray);
+}
+
+.forecast__icon.sunny {
+  color: var(--tertiary);
+}
+
+.forecast__icon.snow {
+  color: var(--white);
 }
 
 .forecast__high {

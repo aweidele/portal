@@ -3,13 +3,25 @@
     width: 50px;
     height: 50px;
     margin-right: 10px;
-    fill: var(--tertiary);
+    fill: var(--gray);
   }
 
   &__temp {
     display: flex;
     font-size: 51px;
     align-items: center;
+
+    &.sunny {
+      svg {
+        fill: var(--tertiary);
+      }
+    }
+
+    &.snow {
+      svg {
+        fill: var(--white);
+      }
+    }
   }
 
   &__description {
@@ -28,8 +40,8 @@
   svg {
     width: 12px;
     height: 12px;
-    fill: var(--tertiary);
     transform: translateY(-5px);
+    fill: currentColor;
   }
 
   &__day {
@@ -40,6 +52,15 @@
 
   &__icon {
     grid-row: 2;
+    color: var(--gray);
+
+    &.sunny {
+      color: var(--tertiary);
+    }
+
+    &.snow {
+      color: var(--white);
+    }
   }
 
   &__high {
