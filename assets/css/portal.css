@@ -315,9 +315,9 @@ h2,
 }
 
 .forecast svg {
-  width: 0.75rem;
-  height: 0.75rem;
-  transform: translateY(-5px);
+  width: 0.875rem;
+  height: 0.875rem;
+  transform: translateY(-3px);
   fill: currentColor;
 }
 

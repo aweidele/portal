@@ -190,7 +190,8 @@ const renderWeather = function (weather) {
     <div class="current-conditions__temp${
       weather.current.weather[0].icon === "01d"
         ? " sunny"
-        : weather.current.weather[0].icon === "13d"
+        : weather.current.weather[0].icon === "13d" ||
+          weather.current.weather[0].icon === "01n"
         ? " snow"
         : ""
     }">
