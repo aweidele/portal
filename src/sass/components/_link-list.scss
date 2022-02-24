@@ -5,6 +5,10 @@
   grid-gap: 10px;
   margin-bottom: $gutterLg;
 
+  // @media screen and (max-width: $tablet) {
+  //   display: none;
+  // }
+
   > div {
     border-radius: 5px;
     padding: $gutter $gutter + 7;

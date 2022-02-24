@@ -8,11 +8,19 @@
       line-height: 1em;
 
       &:first-child {
-        font-size: 31px;
+        font-size: 19px;
+
+        @media screen and (min-width: $tablet) {
+          font-size: 31px;
+        }
       }
 
       &:last-child {
-        font-size: 51px;
+        font-size: 31px;
+
+        @media screen and (min-width: $tablet) {
+          font-size: 51px;
+        }
       }
     }
   }
@@ -47,6 +55,6 @@
 }
 
 .today {
-  color: var(--primary);
   font-weight: 800;
+  border-bottom: 2px solid var(--primary);
 }
