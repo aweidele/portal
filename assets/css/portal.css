@@ -205,6 +205,7 @@ h2,
 
 .calendar__grid>span {
   text-align: center;
+  padding: 0 0.125rem;
 }
 
 .dow {
@@ -213,7 +214,8 @@ h2,
 
 .today {
   font-weight: 800;
-  border-bottom: 2px solid var(--primary);
+  background: var(--primary);
+  border-radius: 50%;
 }
 
 .link-list {
