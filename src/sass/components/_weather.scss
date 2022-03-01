@@ -1,9 +1,12 @@
 .current-conditions {
   svg {
-    width: 30px;
-    height: 30px;
+    height: 20px;
     margin-right: 10px;
     fill: var(--gray);
+
+    @media screen and (min-width: $mobile) {
+      height: 30px;
+    }
 
     @media screen and (min-width: $tablet) {
       width: 50px;
@@ -13,8 +16,16 @@
 
   &__temp {
     display: flex;
-    font-size: 31px;
+    font-size: 19px;
     align-items: center;
+
+    @media screen and (max-width: #{$mobile - 1}) {
+      justify-content: center;
+    }
+
+    @media screen and (min-width: $mobile) {
+      font-size: 31px;
+    }
 
     @media screen and (min-width: $desktopLg) {
       font-size: 51px;

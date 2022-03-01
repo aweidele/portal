@@ -49,7 +49,7 @@ button {
 h1,
 .h1 {
   font-size: 1.9375rem;
-  line-height: 4.3125rem;
+  line-height: 1em;
   letter-spacing: 0.25em;
   text-align: center;
   text-transform: uppercase;
@@ -71,9 +71,9 @@ h2,
   margin: auto;
   padding: 0 1.25rem;
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto auto;
-  grid-template-areas: "weather title calendar";
+  grid-template-areas: "title title" "weather calendar";
   grid-gap: 10px;
   align-items: center;
 }
@@ -194,7 +194,8 @@ h2,
 }
 
 .calendar__today span:last-child {
-  font-size: 1.9375rem;
+  font-size: 1.1875rem;
+  margin-left: 0.25em;
 }
 
 .calendar__grid {
@@ -284,15 +285,14 @@ h2,
 }
 
 .current-conditions svg {
-  width: 1.875rem;
-  height: 1.875rem;
+  height: 1.25rem;
   margin-right: 0.625rem;
   fill: var(--gray);
 }
 
 .current-conditions__temp {
   display: flex;
-  font-size: 1.9375rem;
+  font-size: 1.1875rem;
   align-items: center;
 }
 
@@ -452,6 +452,31 @@ h2,
   padding: 1.25rem;
 }
 
+@media screen and (min-width: 425px) {
+  .header>div {
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas: "weather title calendar";
+    grid-template-rows: auto;
+  }
+
+  .calendar__today span:first-child {
+    font-size: 1.1875rem;
+  }
+
+  .calendar__today span:last-child {
+    margin-left: 0;
+    font-size: 1.9375rem;
+  }
+
+  .current-conditions svg {
+    height: 1.875rem;
+  }
+
+  .current-conditions__temp {
+    font-size: 1.9375rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .header>div {
     grid-template-columns: 190px auto 190px;
@@ -525,5 +550,21 @@ h2,
 
   .current-conditions__description {
     display: none;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .header-calendar {
+    text-align: center;
+  }
+
+  .calendar__today {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .current-conditions__temp {
+    justify-content: center;
   }
 }

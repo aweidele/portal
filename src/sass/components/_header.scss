@@ -5,11 +5,19 @@
   > div {
     @include constrainWidth;
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto;
-    grid-template-areas: "weather title calendar";
+    grid-template-areas:
+      "title title"
+      "weather calendar";
     grid-gap: 10px;
     align-items: center;
+
+    @media screen and (min-width: $mobile) {
+      grid-template-columns: repeat(3, auto);
+      grid-template-areas: "weather title calendar";
+      grid-template-rows: auto;
+    }
 
     @media screen and (min-width: $tablet) {
       grid-template-columns: 190px auto 190px;
@@ -118,4 +126,8 @@
 
 .header-calendar {
   grid-area: calendar;
+
+  @media screen and (max-width: #{$mobile - 1}) {
+    text-align: center;
+  }
 }
